@@ -39,11 +39,13 @@ export default {
       const insertedPokemon = pokemon;
       let isValidPokemon = false;
 
-      const pokemonArr = pokemons.filter(pokemon => pokemon.name == insertedPokemon);
+      const pokemonArr = pokemons.filter(pokemon => pokemon.name == insertedPokemon.toLowerCase());
 
       if (pokemonArr.length) {
         isValidPokemon = true;
-        this.pokemonsFound.push(pokemonArr[0].name);
+        if (!this.pokemonsFound.filter(pokemon => pokemon == pokemonArr[0].name).length) {
+          this.pokemonsFound.push(pokemonArr[0].name);
+        }
       }
       return isValidPokemon;
     },

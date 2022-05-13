@@ -1,6 +1,6 @@
 <template>
   <div class="row pokemon-overview">
-    <div class="row justify-content-md-center mt-4" >
+    <div class="row justify-content-center mt-4" >
         <p class="col-md-3 text-center">Pokémon found: {{ pokemonsFound.length }} / 151</p>
         <div class="col-md-3 text-center">Time left: <span id="time">15:00</span></div>
     </div>
@@ -61,3 +61,9 @@ props: {
   }
 }
 </script>
+
+<style scoped>
+.pokemon-overview {
+  margin: 0 auto;
+}
+</style>
